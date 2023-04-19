@@ -5,10 +5,7 @@ FROM golang:1.20.3-alpine3.17 as base
 WORKDIR /app
 
 # Copy go.mod and go.sum files
-COPY go.mod go.sum ./
-
-# Download dependencies
-RUN go mod download
+COPY go.mod ./
 
 # Copy the source code
 COPY . .
